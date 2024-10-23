@@ -18,9 +18,15 @@ jobs:
 
     - name: Build Docker image
       run: sudo docker build -t test:latest .
+      
+    - name: check Docker image
+      run: sudo docker images
 
     - name: Tag Docker image
       run: sudo docker tag test:latest rabbit0604/test:latest
+
+    - name: check Docker image after tag
+      run: sudo docker images
 
     - name: Push Docker image
       run: sudo docker push rabbit0604/test:latest
